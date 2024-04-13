@@ -4,19 +4,18 @@
 
 <div class="card col-sm-4 mx-auto mt-4">
     <div class="card-body">
-        <h5 class="card-title">Add Gender</h5>
-        <form action="{% url 'store_gender' %}" method="post">
-            {% csrf_token %}
+        <h5 class="card-title">View Gender</h5>
+        <form action="#" method="post">
             <div class="form-group">
                 <div class="mb-3">
                     <label for="{{ form.gender.id_for_label }}">Gender</label>
                     {{ form.gender }}
                 </div>
-                <button type="submit" class="btn btn-success col-sm-4 float-end">Save Gender</button>
-                <a href="{% url 'list_genders' %}" class="btn btn-secondary col-sm-3 float-end me-1">Back</a>
+                <a href="{% url 'list_genders' %}" class="btn btn-secondary col-sm-3 float-end">Back</a>
             </div>
         </form>
     </div>
 </div>
 
 {% endblock content %}
+    

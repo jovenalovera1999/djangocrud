@@ -7,3 +7,16 @@ class GenderForm(forms.ModelForm):
         fields = [
             'gender',
         ]
+        widgets = {
+            'gender': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class GenderFormReadOnly(forms.ModelForm):
+    class Meta:
+        model = Gender
+        fields = [
+            'gender',
+        ]
+        widgets = {
+            'gender': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+        }
