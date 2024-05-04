@@ -2,10 +2,12 @@
 
 {% block content %}
     
+{% include 'include/navbar.html' %}
+
 <div class="card col-sm-7 mx-auto mt-4">
     <div class="card-body">
         <h5 class="card-title">List of Genders</h5>
-        <a href="{% url 'add_gender' %}" class="btn btn-primary col-sm-3 float-end">Add Gender</a>
+        <a href="gender/add" class="btn btn-primary col-sm-3 float-end">Add Gender</a>
         <div class="table-responsive mt-5">
             <table class="table">
                 {% include 'include/messages.html' %}
@@ -21,9 +23,9 @@
                             <td>{{ gender.gender }}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{% url 'view_gender' gender.gender_id %}" class="btn btn-primary">View</a>
-                                    <a href="#" class="btn btn-warning">Edit</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
+                                    <a href="/gender/view/{{ gender.gender_id }}" class="btn btn-primary">View</a>
+                                    <a href="/gender/edit/{{ gender.gender_id }}" class="btn btn-warning">Edit</a>
+                                    <a href="/gender/delete/{{ gender.gender_id }}" class="btn btn-danger">Delete</a>
                                 </div>
                             </td>
                         </tr>

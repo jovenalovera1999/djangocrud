@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import make_password
 from django.db import models
 
 # Create your models here.
@@ -7,6 +8,9 @@ class Gender(models.Model):
     gender = models.CharField(max_length=55)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.gender
 
     class Meta:
         db_table = 'genders'
@@ -28,3 +32,9 @@ class User(models.Model):
 
     class Meta:
         db_table = 'users'
+
+    def save(self):
+        if not self.pk:
+            self.password = make_password(self.password)
+        
+        super(User, self).save()

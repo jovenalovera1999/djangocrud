@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% include 'include/navbar.html' %}
+
 <div class="card col-sm-4 mx-auto mt-4">
     <div class="card-body">
         <h5 class="card-title">View Gender</h5>
@@ -11,7 +13,7 @@
                     <label for="{{ form.gender.id_for_label }}">Gender</label>
                     {{ form.gender }}
                 </div>
-                <a href="{% url 'list_genders' %}" class="btn btn-secondary col-sm-3 float-end">Back</a>
+                <a href="/genders" class="btn btn-secondary col-sm-3 float-end">Back</a>
             </div>
         </form>
     </div>

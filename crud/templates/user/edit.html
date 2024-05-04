@@ -1,0 +1,56 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+{% include 'include/navbar.html' %}
+
+<div class="card col-sm-4 mx-auto mt-4">
+    <div class="card-body">
+        <h5 class="card-title">Add Gender</h5>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="{{ form.first_name.id_for_label }}">First Name</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.middle_name.id_for_label }}">Middle Name</label>
+                    {{ form.middle_name }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+                    {{ form.last_name }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.age.id_for_label }}">Age</label>
+                    {{ form.age }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.gender_id.id_for_label }}">Gender</label>
+                    {{ form.gender_id }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.birth_date.id_for_label }}">Birth Date</label>
+                    {{ form.birth_date }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.contact_number.id_for_label }}">Contact Number</label>
+                    {{ form.contact_number }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.email_address.id_for_label }}">Email Address</label>
+                    {{ form.email_address }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.username.id_for_label }}">Username</label>
+                    {{ form.username }}
+                </div>
+                <button type="submit" class="btn btn-primary col-sm-4 float-end">Save User</button>
+                <a href="/users" class="btn btn-secondary col-sm-3 float-end me-1">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

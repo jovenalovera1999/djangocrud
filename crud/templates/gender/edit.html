@@ -6,8 +6,8 @@
 
 <div class="card col-sm-4 mx-auto mt-4">
     <div class="card-body">
-        <h5 class="card-title">Add Gender</h5>
-        <form action="/gender/store" method="post">
+        <h5 class="card-title">Edit Gender</h5>
+        <form action="/gender/update/{{ gender.gender_id }}" method="post">
             {% csrf_token %}
             <div class="form-group">
                 <div class="mb-3">
